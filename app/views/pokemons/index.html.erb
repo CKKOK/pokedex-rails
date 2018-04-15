@@ -1,0 +1,16 @@
+<div class="page-header">
+    <h1>Pokedex</h1>
+</div>
+<%= link_to 'Report a New Pokemon Sighting', new_pokemon_path, :class => 'btn btn-primary' %>
+<div class="row">
+    <% @pokemons.each do |p| %>
+        <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <%= link_to pokemon_path(p), :action => 'go' do %>
+            <div class="card m-3 text-center">
+                <img class="card-img img-fluid" src="<%= p.img %>" alt="">
+                <h5><%= p.name %></h5>
+            </div>
+        <% end %>
+        </div> 
+    <% end %>
+</div>

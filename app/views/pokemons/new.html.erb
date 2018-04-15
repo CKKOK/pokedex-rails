@@ -1,0 +1,46 @@
+<h1>Report a Pokemon</h1>
+<%= form_with scope: :pokemon, url: pokemons_path, local: true do |f| %>
+    <div class="form-group">
+        <%= f.label :num, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :num, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :name, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :name, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :img, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :img, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :height, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :height, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :weight, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :weight, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :candy, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :candy, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :candy_count, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :candy_count, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :egg, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :egg, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :avg_spawns, :class => 'col-sm-2 col-form-label' %>
+        <%= f.number_field :avg_spawns, step: :any, :class => 'col-sm-8' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :spawn_time, :class => 'col-sm-2 col-form-label' %>
+        <%= f.text_field :spawn_time, :class => 'col-sm-8' %>
+    </div>
+    <p>
+        <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>

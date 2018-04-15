@@ -1,0 +1,62 @@
+<h1><%= @pokemon.name %>'s Details</h1>
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <img src="<%= @pokemon.img %>" alt="">
+    </div>
+</div>
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Statistic</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Num: </td>
+                <td><%= @pokemon.num %></td>
+            </tr>
+            <tr>
+                <td>Name: </td>
+                <td><%= @pokemon.name %></td>
+            </tr>
+            <tr>
+                <td>Height: </td>
+                <td><%= @pokemon.height %></td>
+            </tr>
+            <tr>
+                <td>Weight: </td>
+                <td><%= @pokemon.weight %></td>
+            </tr>
+            <tr>
+                <td>Candy: </td>
+                <td><%= @pokemon.candy %></td>
+            </tr>
+            <tr>
+                <td>Candy Count: </td>
+                <td><%= @pokemon.candy_count %></td>
+            </tr>
+            <tr>
+                <td>Egg: </td>
+                <td><%= @pokemon.egg %></td>
+            </tr>
+            <tr>
+                <td>Average Spawns: </td>
+                <td><%= @pokemon.avg_spawns %></td>
+            </tr>
+            <tr>
+                <td>Spawn Time: </td>
+                <td><%= @pokemon.spawn_time %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-sm-6 text-center">
+        <%= link_to 'Edit', edit_pokemon_path(@pokemon), :class => 'btn btn-primary m-4' %>
+    </div>
+    <div class="col-sm-6 text-center">
+        <%= link_to 'Delete', pokemon_path(@pokemon), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger m-4' %>
+    </div>
+</div>

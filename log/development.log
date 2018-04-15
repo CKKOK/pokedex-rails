@@ -1,0 +1,2284 @@
+  [1m[35m (497.6ms)[0m  [1m[35mCREATE DATABASE "pokedex-rails-master_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (354.5ms)[0m  [1m[35mCREATE DATABASE "pokedex-rails-master_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6098805640147201590)[0m
+  ↳ bin/rails:4
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreatePokemons (20180415165943)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "pokemons" ("id" bigserial primary key, "num" character varying, "name" character varying, "img" character varying, "height" character varying, "weight" character varying, "candy" character varying, "candy_count" integer, "egg" character varying, "avg_spawns" float, "spawn_time" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180415165943_create_pokemons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180415165943"]]
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-15 16:59:57.315446"], ["updated_at", "2018-04-15 16:59:57.315446"]]
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6098805640147201590)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (3.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "001"], ["name", "Bulbasaro"], ["img", "http://www.serebii.net/pokemongo/pokemon/001.png"], ["height", "0.71 m"], ["weight", "6.9 kg"], ["candy", "Bulbasaur Candy"], ["candy_count", 25], ["egg", "2 km"], ["avg_spawns", 69.0], ["spawn_time", "20:00"], ["created_at", "2018-04-15 17:00:01.665536"], ["updated_at", "2018-04-15 17:00:01.665536"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "002"], ["name", "Ivysaur"], ["img", "http://www.serebii.net/pokemongo/pokemon/002.png"], ["height", "0.99 m"], ["weight", "13.0 kg"], ["candy", "Bulbasaur Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 4.2], ["spawn_time", "07:00"], ["created_at", "2018-04-15 17:00:01.677101"], ["updated_at", "2018-04-15 17:00:01.677101"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "003"], ["name", "Venusaur"], ["img", "http://www.serebii.net/pokemongo/pokemon/003.png"], ["height", "2.01 m"], ["weight", "100.0 kg"], ["candy", "Bulbasaur Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.7], ["spawn_time", "11:30"], ["created_at", "2018-04-15 17:00:01.681314"], ["updated_at", "2018-04-15 17:00:01.681314"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "004"], ["name", "Charmander"], ["img", "http://www.serebii.net/pokemongo/pokemon/004.png"], ["height", "0.61 m"], ["weight", "8.5 kg"], ["candy", "Charmander Candy"], ["candy_count", 25], ["egg", "2 km"], ["avg_spawns", 25.3], ["spawn_time", "08:45"], ["created_at", "2018-04-15 17:00:01.691513"], ["updated_at", "2018-04-15 17:00:01.691513"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "005"], ["name", "Charmeleon"], ["img", "http://www.serebii.net/pokemongo/pokemon/005.png"], ["height", "1.09 m"], ["weight", "19.0 kg"], ["candy", "Charmander Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 1.2], ["spawn_time", "19:00"], ["created_at", "2018-04-15 17:00:01.697655"], ["updated_at", "2018-04-15 17:00:01.697655"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "006"], ["name", "Charizard"], ["img", "http://www.serebii.net/pokemongo/pokemon/006.png"], ["height", "1.70 m"], ["weight", "90.5 kg"], ["candy", "Charmander Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.31], ["spawn_time", "13:34"], ["created_at", "2018-04-15 17:00:01.708108"], ["updated_at", "2018-04-15 17:00:01.708108"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "007"], ["name", "Squirtle"], ["img", "http://www.serebii.net/pokemongo/pokemon/007.png"], ["height", "0.51 m"], ["weight", "9.0 kg"], ["candy", "Squirtle Candy"], ["candy_count", 25], ["egg", "2 km"], ["avg_spawns", 58.0], ["spawn_time", "04:25"], ["created_at", "2018-04-15 17:00:01.715058"], ["updated_at", "2018-04-15 17:00:01.715058"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "008"], ["name", "Wartortle"], ["img", "http://www.serebii.net/pokemongo/pokemon/008.png"], ["height", "0.99 m"], ["weight", "22.5 kg"], ["candy", "Squirtle Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 3.4], ["spawn_time", "07:02"], ["created_at", "2018-04-15 17:00:01.725305"], ["updated_at", "2018-04-15 17:00:01.725305"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "009"], ["name", "Blastoise"], ["img", "http://www.serebii.net/pokemongo/pokemon/009.png"], ["height", "1.60 m"], ["weight", "85.5 kg"], ["candy", "Squirtle Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.67], ["spawn_time", "00:06"], ["created_at", "2018-04-15 17:00:01.731274"], ["updated_at", "2018-04-15 17:00:01.731274"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "010"], ["name", "Caterpie"], ["img", "http://www.serebii.net/pokemongo/pokemon/010.png"], ["height", "0.30 m"], ["weight", "2.9 kg"], ["candy", "Caterpie Candy"], ["candy_count", 12], ["egg", "2 km"], ["avg_spawns", 303.2], ["spawn_time", "16:35"], ["created_at", "2018-04-15 17:00:01.739239"], ["updated_at", "2018-04-15 17:00:01.739239"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "011"], ["name", "Metapod"], ["img", "http://www.serebii.net/pokemongo/pokemon/011.png"], ["height", "0.71 m"], ["weight", "9.9 kg"], ["candy", "Caterpie Candy"], ["candy_count", 50], ["egg", "Not in Eggs"], ["avg_spawns", 18.7], ["spawn_time", "02:11"], ["created_at", "2018-04-15 17:00:01.744344"], ["updated_at", "2018-04-15 17:00:01.744344"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (2.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "012"], ["name", "Butterfree"], ["img", "http://www.serebii.net/pokemongo/pokemon/012.png"], ["height", "1.09 m"], ["weight", "32.0 kg"], ["candy", "Caterpie Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 2.2], ["spawn_time", "05:23"], ["created_at", "2018-04-15 17:00:01.749454"], ["updated_at", "2018-04-15 17:00:01.749454"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "013"], ["name", "Weedle"], ["img", "http://www.serebii.net/pokemongo/pokemon/013.png"], ["height", "0.30 m"], ["weight", "3.2 kg"], ["candy", "Weedle Candy"], ["candy_count", 12], ["egg", "2 km"], ["avg_spawns", 712.0], ["spawn_time", "02:21"], ["created_at", "2018-04-15 17:00:01.759664"], ["updated_at", "2018-04-15 17:00:01.759664"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "014"], ["name", "Kakuna"], ["img", "http://www.serebii.net/pokemongo/pokemon/014.png"], ["height", "0.61 m"], ["weight", "10.0 kg"], ["candy", "Weedle Candy"], ["candy_count", 50], ["egg", "Not in Eggs"], ["avg_spawns", 44.0], ["spawn_time", "02:30"], ["created_at", "2018-04-15 17:00:01.764741"], ["updated_at", "2018-04-15 17:00:01.764741"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "015"], ["name", "Beedrill"], ["img", "http://www.serebii.net/pokemongo/pokemon/015.png"], ["height", "0.99 m"], ["weight", "29.5 kg"], ["candy", "Weedle Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 5.1], ["spawn_time", "04:50"], ["created_at", "2018-04-15 17:00:01.774159"], ["updated_at", "2018-04-15 17:00:01.774159"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "016"], ["name", "Pidgey"], ["img", "http://www.serebii.net/pokemongo/pokemon/016.png"], ["height", "0.30 m"], ["weight", "1.8 kg"], ["candy", "Pidgey Candy"], ["candy_count", 12], ["egg", "2 km"], ["avg_spawns", 1.598], ["spawn_time", "01:34"], ["created_at", "2018-04-15 17:00:01.777240"], ["updated_at", "2018-04-15 17:00:01.777240"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "017"], ["name", "Pidgeotto"], ["img", "http://www.serebii.net/pokemongo/pokemon/017.png"], ["height", "1.09 m"], ["weight", "30.0 kg"], ["candy", "Pidgey Candy"], ["candy_count", 50], ["egg", "Not in Eggs"], ["avg_spawns", 102.0], ["spawn_time", "01:30"], ["created_at", "2018-04-15 17:00:01.782360"], ["updated_at", "2018-04-15 17:00:01.782360"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "018"], ["name", "Pidgeot"], ["img", "http://www.serebii.net/pokemongo/pokemon/018.png"], ["height", "1.50 m"], ["weight", "39.5 kg"], ["candy", "Pidgey Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 13.0], ["spawn_time", "01:50"], ["created_at", "2018-04-15 17:00:01.786184"], ["updated_at", "2018-04-15 17:00:01.786184"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "019"], ["name", "Rattata"], ["img", "http://www.serebii.net/pokemongo/pokemon/019.png"], ["height", "0.30 m"], ["weight", "3.5 kg"], ["candy", "Rattata Candy"], ["candy_count", 25], ["egg", "2 km"], ["avg_spawns", 1.305], ["spawn_time", "01:55"], ["created_at", "2018-04-15 17:00:01.789431"], ["updated_at", "2018-04-15 17:00:01.789431"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "020"], ["name", "Raticate"], ["img", "http://www.serebii.net/pokemongo/pokemon/020.png"], ["height", "0.71 m"], ["weight", "18.5 kg"], ["candy", "Rattata Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 41.0], ["spawn_time", "01:56"], ["created_at", "2018-04-15 17:00:01.792120"], ["updated_at", "2018-04-15 17:00:01.792120"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "021"], ["name", "Spearow"], ["img", "http://www.serebii.net/pokemongo/pokemon/021.png"], ["height", "0.30 m"], ["weight", "2.0 kg"], ["candy", "Spearow Candy"], ["candy_count", 50], ["egg", "2 km"], ["avg_spawns", 473.0], ["spawn_time", "12:25"], ["created_at", "2018-04-15 17:00:01.795048"], ["updated_at", "2018-04-15 17:00:01.795048"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "022"], ["name", "Fearow"], ["img", "http://www.serebii.net/pokemongo/pokemon/022.png"], ["height", "1.19 m"], ["weight", "38.0 kg"], ["candy", "Spearow Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 15.0], ["spawn_time", "01:11"], ["created_at", "2018-04-15 17:00:01.798262"], ["updated_at", "2018-04-15 17:00:01.798262"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "023"], ["name", "Ekans"], ["img", "http://www.serebii.net/pokemongo/pokemon/023.png"], ["height", "2.01 m"], ["weight", "6.9 kg"], ["candy", "Ekans Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 227.0], ["spawn_time", "12:20"], ["created_at", "2018-04-15 17:00:01.803686"], ["updated_at", "2018-04-15 17:00:01.803686"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "024"], ["name", "Arbok"], ["img", "http://www.serebii.net/pokemongo/pokemon/024.png"], ["height", "3.51 m"], ["weight", "65.0 kg"], ["candy", "Ekans Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 7.2], ["spawn_time", "01:50"], ["created_at", "2018-04-15 17:00:01.811088"], ["updated_at", "2018-04-15 17:00:01.811088"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "025"], ["name", "Pikachu"], ["img", "http://www.serebii.net/pokemongo/pokemon/025.png"], ["height", "0.41 m"], ["weight", "6.0 kg"], ["candy", "Pikachu Candy"], ["candy_count", 50], ["egg", "2 km"], ["avg_spawns", 21.0], ["spawn_time", "04:00"], ["created_at", "2018-04-15 17:00:01.814726"], ["updated_at", "2018-04-15 17:00:01.814726"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "026"], ["name", "Raichu"], ["img", "http://www.serebii.net/pokemongo/pokemon/026.png"], ["height", "0.79 m"], ["weight", "30.0 kg"], ["candy", "Pikachu Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.76], ["spawn_time", "23:58"], ["created_at", "2018-04-15 17:00:01.817928"], ["updated_at", "2018-04-15 17:00:01.817928"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "027"], ["name", "Sandshrew"], ["img", "http://www.serebii.net/pokemongo/pokemon/027.png"], ["height", "0.61 m"], ["weight", "12.0 kg"], ["candy", "Sandshrew Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 111.0], ["spawn_time", "01:58"], ["created_at", "2018-04-15 17:00:01.823069"], ["updated_at", "2018-04-15 17:00:01.823069"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "028"], ["name", "Sandslash"], ["img", "http://www.serebii.net/pokemongo/pokemon/028.png"], ["height", "0.99 m"], ["weight", "29.5 kg"], ["candy", "Sandshrew Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 3.7], ["spawn_time", "12:34"], ["created_at", "2018-04-15 17:00:01.826419"], ["updated_at", "2018-04-15 17:00:01.826419"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "029"], ["name", "Nidoran ♀ (Female)"], ["img", "http://www.serebii.net/pokemongo/pokemon/029.png"], ["height", "0.41 m"], ["weight", "7.0 kg"], ["candy", "Nidoran ♀ (Female) Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 138.0], ["spawn_time", "01:51"], ["created_at", "2018-04-15 17:00:01.829785"], ["updated_at", "2018-04-15 17:00:01.829785"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "030"], ["name", "Nidorina"], ["img", "http://www.serebii.net/pokemongo/pokemon/030.png"], ["height", "0.79 m"], ["weight", "20.0 kg"], ["candy", "Nidoran ♀ (Female) Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 8.8], ["spawn_time", "07:22"], ["created_at", "2018-04-15 17:00:01.835236"], ["updated_at", "2018-04-15 17:00:01.835236"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "031"], ["name", "Nidoqueen"], ["img", "http://www.serebii.net/pokemongo/pokemon/031.png"], ["height", "1.30 m"], ["weight", "60.0 kg"], ["candy", "Nidoran ♀ (Female) Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.2], ["spawn_time", "12:35"], ["created_at", "2018-04-15 17:00:01.843572"], ["updated_at", "2018-04-15 17:00:01.843572"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "032"], ["name", "Nidoran ♂ (Male)"], ["img", "http://www.serebii.net/pokemongo/pokemon/032.png"], ["height", "0.51 m"], ["weight", "9.0 kg"], ["candy", "Nidoran ♂ (Male) Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 131.0], ["spawn_time", "01:12"], ["created_at", "2018-04-15 17:00:01.847878"], ["updated_at", "2018-04-15 17:00:01.847878"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "033"], ["name", "Nidorino"], ["img", "http://www.serebii.net/pokemongo/pokemon/033.png"], ["height", "0.89 m"], ["weight", "19.5 kg"], ["candy", "Nidoran ♂ (Male) Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 8.3], ["spawn_time", "09:02"], ["created_at", "2018-04-15 17:00:01.851478"], ["updated_at", "2018-04-15 17:00:01.851478"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "034"], ["name", "Nidoking"], ["img", "http://www.serebii.net/pokemongo/pokemon/034.png"], ["height", "1.40 m"], ["weight", "62.0 kg"], ["candy", "Nidoran ♂ (Male) Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.7], ["spawn_time", "12:16"], ["created_at", "2018-04-15 17:00:01.855884"], ["updated_at", "2018-04-15 17:00:01.855884"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "035"], ["name", "Clefairy"], ["img", "http://www.serebii.net/pokemongo/pokemon/035.png"], ["height", "0.61 m"], ["weight", "7.5 kg"], ["candy", "Clefairy Candy"], ["candy_count", 50], ["egg", "2 km"], ["avg_spawns", 92.0], ["spawn_time", "03:30"], ["created_at", "2018-04-15 17:00:01.860122"], ["updated_at", "2018-04-15 17:00:01.860122"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "036"], ["name", "Clefable"], ["img", "http://www.serebii.net/pokemongo/pokemon/036.png"], ["height", "1.30 m"], ["weight", "40.0 kg"], ["candy", "Clefairy Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.2], ["spawn_time", "03:29"], ["created_at", "2018-04-15 17:00:01.863160"], ["updated_at", "2018-04-15 17:00:01.863160"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "037"], ["name", "Vulpix"], ["img", "http://www.serebii.net/pokemongo/pokemon/037.png"], ["height", "0.61 m"], ["weight", "9.9 kg"], ["candy", "Vulpix Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 22.0], ["spawn_time", "13:43"], ["created_at", "2018-04-15 17:00:01.867631"], ["updated_at", "2018-04-15 17:00:01.867631"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "038"], ["name", "Ninetales"], ["img", "http://www.serebii.net/pokemongo/pokemon/038.png"], ["height", "1.09 m"], ["weight", "19.9 kg"], ["candy", "Vulpix Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.77], ["spawn_time", "01:32"], ["created_at", "2018-04-15 17:00:01.875674"], ["updated_at", "2018-04-15 17:00:01.875674"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "039"], ["name", "Jigglypuff"], ["img", "http://www.serebii.net/pokemongo/pokemon/039.png"], ["height", "0.51 m"], ["weight", "5.5 kg"], ["candy", "Jigglypuff Candy"], ["candy_count", 50], ["egg", "2 km"], ["avg_spawns", 39.0], ["spawn_time", "08:46"], ["created_at", "2018-04-15 17:00:01.878534"], ["updated_at", "2018-04-15 17:00:01.878534"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "040"], ["name", "Wigglytuff"], ["img", "http://www.serebii.net/pokemongo/pokemon/040.png"], ["height", "0.99 m"], ["weight", "12.0 kg"], ["candy", "Jigglypuff Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.8], ["spawn_time", "12:28"], ["created_at", "2018-04-15 17:00:01.887140"], ["updated_at", "2018-04-15 17:00:01.887140"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "041"], ["name", "Zubat"], ["img", "http://www.serebii.net/pokemongo/pokemon/041.png"], ["height", "0.79 m"], ["weight", "7.5 kg"], ["candy", "Zubat Candy"], ["candy_count", 50], ["egg", "2 km"], ["avg_spawns", 652.0], ["spawn_time", "12:28"], ["created_at", "2018-04-15 17:00:01.892198"], ["updated_at", "2018-04-15 17:00:01.892198"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "042"], ["name", "Golbat"], ["img", "http://www.serebii.net/pokemongo/pokemon/042.png"], ["height", "1.60 m"], ["weight", "55.0 kg"], ["candy", "Zubat Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 42.0], ["spawn_time", "02:15"], ["created_at", "2018-04-15 17:00:01.895238"], ["updated_at", "2018-04-15 17:00:01.895238"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "043"], ["name", "Oddish"], ["img", "http://www.serebii.net/pokemongo/pokemon/043.png"], ["height", "0.51 m"], ["weight", "5.4 kg"], ["candy", "Oddish Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 102.0], ["spawn_time", "03:58"], ["created_at", "2018-04-15 17:00:01.898805"], ["updated_at", "2018-04-15 17:00:01.898805"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "044"], ["name", "Gloom"], ["img", "http://www.serebii.net/pokemongo/pokemon/044.png"], ["height", "0.79 m"], ["weight", "8.6 kg"], ["candy", "Oddish Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 6.4], ["spawn_time", "11:33"], ["created_at", "2018-04-15 17:00:01.907133"], ["updated_at", "2018-04-15 17:00:01.907133"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "045"], ["name", "Vileplume"], ["img", "http://www.serebii.net/pokemongo/pokemon/045.png"], ["height", "1.19 m"], ["weight", "18.6 kg"], ["candy", "Oddish Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.97], ["spawn_time", "23:58"], ["created_at", "2018-04-15 17:00:01.914964"], ["updated_at", "2018-04-15 17:00:01.914964"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "046"], ["name", "Paras"], ["img", "http://www.serebii.net/pokemongo/pokemon/046.png"], ["height", "0.30 m"], ["weight", "5.4 kg"], ["candy", "Paras Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 236.0], ["spawn_time", "01:42"], ["created_at", "2018-04-15 17:00:01.918389"], ["updated_at", "2018-04-15 17:00:01.918389"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "047"], ["name", "Parasect"], ["img", "http://www.serebii.net/pokemongo/pokemon/047.png"], ["height", "0.99 m"], ["weight", "29.5 kg"], ["candy", "Paras Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 7.4], ["spawn_time", "01:22"], ["created_at", "2018-04-15 17:00:01.924882"], ["updated_at", "2018-04-15 17:00:01.924882"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "048"], ["name", "Venonat"], ["img", "http://www.serebii.net/pokemongo/pokemon/048.png"], ["height", "0.99 m"], ["weight", "30.0 kg"], ["candy", "Venonat Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 228.0], ["spawn_time", "02:31"], ["created_at", "2018-04-15 17:00:01.928011"], ["updated_at", "2018-04-15 17:00:01.928011"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "049"], ["name", "Venomoth"], ["img", "http://www.serebii.net/pokemongo/pokemon/049.png"], ["height", "1.50 m"], ["weight", "12.5 kg"], ["candy", "Venonat Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 7.2], ["spawn_time", "23:40"], ["created_at", "2018-04-15 17:00:01.931508"], ["updated_at", "2018-04-15 17:00:01.931508"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "050"], ["name", "Diglett"], ["img", "http://www.serebii.net/pokemongo/pokemon/050.png"], ["height", "0.20 m"], ["weight", "0.8 kg"], ["candy", "Diglett Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 40.0], ["spawn_time", "02:22"], ["created_at", "2018-04-15 17:00:01.941087"], ["updated_at", "2018-04-15 17:00:01.941087"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "051"], ["name", "Dugtrio"], ["img", "http://www.serebii.net/pokemongo/pokemon/051.png"], ["height", "0.71 m"], ["weight", "33.3 kg"], ["candy", "Dugtrio"], ["egg", "Not in Eggs"], ["avg_spawns", 1.4], ["spawn_time", "12:37"], ["created_at", "2018-04-15 17:00:01.950484"], ["updated_at", "2018-04-15 17:00:01.950484"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "052"], ["name", "Meowth"], ["img", "http://www.serebii.net/pokemongo/pokemon/052.png"], ["height", "0.41 m"], ["weight", "4.2 kg"], ["candy", "Meowth Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 86.0], ["spawn_time", "02:54"], ["created_at", "2018-04-15 17:00:01.953538"], ["updated_at", "2018-04-15 17:00:01.953538"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "053"], ["name", "Persian"], ["img", "http://www.serebii.net/pokemongo/pokemon/053.png"], ["height", "0.99 m"], ["weight", "32.0 kg"], ["candy", "Meowth Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 2.2], ["spawn_time", "02:44"], ["created_at", "2018-04-15 17:00:01.958993"], ["updated_at", "2018-04-15 17:00:01.958993"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "054"], ["name", "Psyduck"], ["img", "http://www.serebii.net/pokemongo/pokemon/054.png"], ["height", "0.79 m"], ["weight", "19.6 kg"], ["candy", "Psyduck Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 254.0], ["spawn_time", "03:41"], ["created_at", "2018-04-15 17:00:01.962481"], ["updated_at", "2018-04-15 17:00:01.962481"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "055"], ["name", "Golduck"], ["img", "http://www.serebii.net/pokemongo/pokemon/055.png"], ["height", "1.70 m"], ["weight", "76.6 kg"], ["candy", "Psyduck Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 8.7], ["spawn_time", "23:06"], ["created_at", "2018-04-15 17:00:01.973891"], ["updated_at", "2018-04-15 17:00:01.973891"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "056"], ["name", "Mankey"], ["img", "http://www.serebii.net/pokemongo/pokemon/056.png"], ["height", "0.51 m"], ["weight", "28.0 kg"], ["candy", "Mankey Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 92.0], ["spawn_time", "12:52"], ["created_at", "2018-04-15 17:00:01.979013"], ["updated_at", "2018-04-15 17:00:01.979013"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "057"], ["name", "Primeape"], ["img", "http://www.serebii.net/pokemongo/pokemon/057.png"], ["height", "0.99 m"], ["weight", "32.0 kg"], ["candy", "Mankey Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 3.1], ["spawn_time", "12:33"], ["created_at", "2018-04-15 17:00:01.986546"], ["updated_at", "2018-04-15 17:00:01.986546"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "058"], ["name", "Growlithe"], ["img", "http://www.serebii.net/pokemongo/pokemon/058.png"], ["height", "0.71 m"], ["weight", "19.0 kg"], ["candy", "Growlithe Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 92.0], ["spawn_time", "03:57"], ["created_at", "2018-04-15 17:00:01.991462"], ["updated_at", "2018-04-15 17:00:01.991462"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "059"], ["name", "Arcanine"], ["img", "http://www.serebii.net/pokemongo/pokemon/059.png"], ["height", "1.91 m"], ["weight", "155.0 kg"], ["candy", "Growlithe Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.7], ["spawn_time", "03:11"], ["created_at", "2018-04-15 17:00:01.994212"], ["updated_at", "2018-04-15 17:00:01.994212"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "060"], ["name", "Poliwag"], ["img", "http://www.serebii.net/pokemongo/pokemon/060.png"], ["height", "0.61 m"], ["weight", "12.4 kg"], ["candy", "Poliwag Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 219.0], ["spawn_time", "03:40"], ["created_at", "2018-04-15 17:00:01.997503"], ["updated_at", "2018-04-15 17:00:01.997503"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "061"], ["name", "Poliwhirl"], ["img", "http://www.serebii.net/pokemongo/pokemon/061.png"], ["height", "0.99 m"], ["weight", "20.0 kg"], ["candy", "Poliwag Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 13.0], ["spawn_time", "09:14"], ["created_at", "2018-04-15 17:00:02.005919"], ["updated_at", "2018-04-15 17:00:02.005919"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "062"], ["name", "Poliwrath"], ["img", "http://www.serebii.net/pokemongo/pokemon/062.png"], ["height", "1.30 m"], ["weight", "54.0 kg"], ["candy", "Poliwag Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.1], ["spawn_time", "01:32"], ["created_at", "2018-04-15 17:00:02.014520"], ["updated_at", "2018-04-15 17:00:02.014520"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "063"], ["name", "Abra"], ["img", "http://www.serebii.net/pokemongo/pokemon/063.png"], ["height", "0.89 m"], ["weight", "19.5 kg"], ["candy", "Abra Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 42.0], ["spawn_time", "04:30"], ["created_at", "2018-04-15 17:00:02.022880"], ["updated_at", "2018-04-15 17:00:02.022880"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "064"], ["name", "Kadabra"], ["img", "http://www.serebii.net/pokemongo/pokemon/064.png"], ["height", "1.30 m"], ["weight", "56.5 kg"], ["candy", "Abra Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 2.7], ["spawn_time", "11:25"], ["created_at", "2018-04-15 17:00:02.028383"], ["updated_at", "2018-04-15 17:00:02.028383"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "065"], ["name", "Alakazam"], ["img", "http://www.serebii.net/pokemongo/pokemon/065.png"], ["height", "1.50 m"], ["weight", "48.0 kg"], ["candy", "Abra Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.73], ["spawn_time", "12:33"], ["created_at", "2018-04-15 17:00:02.031625"], ["updated_at", "2018-04-15 17:00:02.031625"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "066"], ["name", "Machop"], ["img", "http://www.serebii.net/pokemongo/pokemon/066.png"], ["height", "0.79 m"], ["weight", "19.5 kg"], ["candy", "Machop Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 49.0], ["spawn_time", "01:55"], ["created_at", "2018-04-15 17:00:02.043476"], ["updated_at", "2018-04-15 17:00:02.043476"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "067"], ["name", "Machoke"], ["img", "http://www.serebii.net/pokemongo/pokemon/067.png"], ["height", "1.50 m"], ["weight", "70.5 kg"], ["candy", "Machop Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 3.4], ["spawn_time", "10:32"], ["created_at", "2018-04-15 17:00:02.051709"], ["updated_at", "2018-04-15 17:00:02.051709"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "068"], ["name", "Machamp"], ["img", "http://www.serebii.net/pokemongo/pokemon/068.png"], ["height", "1.60 m"], ["weight", "130.0 kg"], ["candy", "Machop Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.68], ["spawn_time", "02:55"], ["created_at", "2018-04-15 17:00:02.055004"], ["updated_at", "2018-04-15 17:00:02.055004"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "069"], ["name", "Bellsprout"], ["img", "http://www.serebii.net/pokemongo/pokemon/069.png"], ["height", "0.71 m"], ["weight", "4.0 kg"], ["candy", "Bellsprout Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 115.0], ["spawn_time", "04:10"], ["created_at", "2018-04-15 17:00:02.060903"], ["updated_at", "2018-04-15 17:00:02.060903"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (3.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "070"], ["name", "Weepinbell"], ["img", "http://www.serebii.net/pokemongo/pokemon/070.png"], ["height", "0.99 m"], ["weight", "6.4 kg"], ["candy", "Bellsprout Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 7.2], ["spawn_time", "09:45"], ["created_at", "2018-04-15 17:00:02.065106"], ["updated_at", "2018-04-15 17:00:02.065106"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "071"], ["name", "Victreebel"], ["img", "http://www.serebii.net/pokemongo/pokemon/071.png"], ["height", "1.70 m"], ["weight", "15.5 kg"], ["candy", "Bellsprout Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.59], ["spawn_time", "12:19"], ["created_at", "2018-04-15 17:00:02.076374"], ["updated_at", "2018-04-15 17:00:02.076374"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "072"], ["name", "Tentacool"], ["img", "http://www.serebii.net/pokemongo/pokemon/072.png"], ["height", "0.89 m"], ["weight", "45.5 kg"], ["candy", "Tentacool Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 81.0], ["spawn_time", "03:20"], ["created_at", "2018-04-15 17:00:02.085309"], ["updated_at", "2018-04-15 17:00:02.085309"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (2.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "073"], ["name", "Tentacruel"], ["img", "http://www.serebii.net/pokemongo/pokemon/073.png"], ["height", "1.60 m"], ["weight", "55.0 kg"], ["candy", "Tentacool Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 8.2], ["spawn_time", "23:36"], ["created_at", "2018-04-15 17:00:02.092650"], ["updated_at", "2018-04-15 17:00:02.092650"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "074"], ["name", "Geodude"], ["img", "http://www.serebii.net/pokemongo/pokemon/074.png"], ["height", "0.41 m"], ["weight", "20.0 kg"], ["candy", "Geodude Candy"], ["candy_count", 25], ["egg", "2 km"], ["avg_spawns", 119.0], ["spawn_time", "12:40"], ["created_at", "2018-04-15 17:00:02.099621"], ["updated_at", "2018-04-15 17:00:02.099621"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "075"], ["name", "Graveler"], ["img", "http://www.serebii.net/pokemongo/pokemon/075.png"], ["height", "0.99 m"], ["weight", "105.0 kg"], ["candy", "Geodude Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 7.1], ["spawn_time", "04:53"], ["created_at", "2018-04-15 17:00:02.108736"], ["updated_at", "2018-04-15 17:00:02.108736"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "076"], ["name", "Golem"], ["img", "http://www.serebii.net/pokemongo/pokemon/076.png"], ["height", "1.40 m"], ["weight", "300.0 kg"], ["candy", "Geodude Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.47], ["spawn_time", "12:16"], ["created_at", "2018-04-15 17:00:02.114832"], ["updated_at", "2018-04-15 17:00:02.114832"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "077"], ["name", "Ponyta"], ["img", "http://www.serebii.net/pokemongo/pokemon/077.png"], ["height", "0.99 m"], ["weight", "30.0 kg"], ["candy", "Ponyta Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 51.0], ["spawn_time", "02:50"], ["created_at", "2018-04-15 17:00:02.123878"], ["updated_at", "2018-04-15 17:00:02.123878"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "078"], ["name", "Rapidash"], ["img", "http://www.serebii.net/pokemongo/pokemon/078.png"], ["height", "1.70 m"], ["weight", "95.0 kg"], ["candy", "Ponyta Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.1], ["spawn_time", "04:00"], ["created_at", "2018-04-15 17:00:02.129055"], ["updated_at", "2018-04-15 17:00:02.129055"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "079"], ["name", "Slowpoke"], ["img", "http://www.serebii.net/pokemongo/pokemon/079.png"], ["height", "1.19 m"], ["weight", "36.0 kg"], ["candy", "Slowpoke Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 105.0], ["spawn_time", "07:12"], ["created_at", "2018-04-15 17:00:02.141503"], ["updated_at", "2018-04-15 17:00:02.141503"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "080"], ["name", "Slowbro"], ["img", "http://www.serebii.net/pokemongo/pokemon/080.png"], ["height", "1.60 m"], ["weight", "78.5 kg"], ["candy", "Slowpoke Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 3.6], ["spawn_time", "02:56"], ["created_at", "2018-04-15 17:00:02.148168"], ["updated_at", "2018-04-15 17:00:02.148168"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "081"], ["name", "Magnemite"], ["img", "http://www.serebii.net/pokemongo/pokemon/081.png"], ["height", "0.30 m"], ["weight", "6.0 kg"], ["candy", "Magnemite Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 71.0], ["spawn_time", "04:04"], ["created_at", "2018-04-15 17:00:02.154664"], ["updated_at", "2018-04-15 17:00:02.154664"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "082"], ["name", "Magneton"], ["img", "http://www.serebii.net/pokemongo/pokemon/082.png"], ["height", "0.99 m"], ["weight", "60.0 kg"], ["candy", "Magnemite Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 2.3], ["spawn_time", "15:25"], ["created_at", "2018-04-15 17:00:02.160822"], ["updated_at", "2018-04-15 17:00:02.160822"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "083"], ["name", "Farfetch'd"], ["img", "http://www.serebii.net/pokemongo/pokemon/083.png"], ["height", "0.79 m"], ["weight", "15.0 kg"], ["candy", "None"], ["egg", "5 km"], ["avg_spawns", 2.12], ["spawn_time", "01:09"], ["created_at", "2018-04-15 17:00:02.165468"], ["updated_at", "2018-04-15 17:00:02.165468"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "084"], ["name", "Doduo"], ["img", "http://www.serebii.net/pokemongo/pokemon/084.png"], ["height", "1.40 m"], ["weight", "39.2 kg"], ["candy", "Doduo Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 52.0], ["spawn_time", "05:10"], ["created_at", "2018-04-15 17:00:02.172689"], ["updated_at", "2018-04-15 17:00:02.172689"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "085"], ["name", "Dodrio"], ["img", "http://www.serebii.net/pokemongo/pokemon/085.png"], ["height", "1.80 m"], ["weight", "85.2 kg"], ["candy", "Doduo Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 22.0], ["spawn_time", "02:12"], ["created_at", "2018-04-15 17:00:02.178945"], ["updated_at", "2018-04-15 17:00:02.178945"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "086"], ["name", "Seel"], ["img", "http://www.serebii.net/pokemongo/pokemon/086.png"], ["height", "1.09 m"], ["weight", "90.0 kg"], ["candy", "Seel Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 28.0], ["spawn_time", "06:46"], ["created_at", "2018-04-15 17:00:02.183639"], ["updated_at", "2018-04-15 17:00:02.183639"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "087"], ["name", "Dewgong"], ["img", "http://www.serebii.net/pokemongo/pokemon/087.png"], ["height", "1.70 m"], ["weight", "120.0 kg"], ["candy", "Seel Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.3], ["spawn_time", "06:04"], ["created_at", "2018-04-15 17:00:02.190925"], ["updated_at", "2018-04-15 17:00:02.190925"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "088"], ["name", "Grimer"], ["img", "http://www.serebii.net/pokemongo/pokemon/088.png"], ["height", "0.89 m"], ["weight", "30.0 kg"], ["candy", "Grimer Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 5.2], ["spawn_time", "15:11"], ["created_at", "2018-04-15 17:00:02.194044"], ["updated_at", "2018-04-15 17:00:02.194044"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "089"], ["name", "Muk"], ["img", "http://www.serebii.net/pokemongo/pokemon/089.png"], ["height", "1.19 m"], ["weight", "30.0 kg"], ["candy", "Grimer Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.31], ["spawn_time", "01:28"], ["created_at", "2018-04-15 17:00:02.197280"], ["updated_at", "2018-04-15 17:00:02.197280"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "090"], ["name", "Shellder"], ["img", "http://www.serebii.net/pokemongo/pokemon/090.png"], ["height", "0.30 m"], ["weight", "4.0 kg"], ["candy", "Shellder Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 52.0], ["spawn_time", "07:39"], ["created_at", "2018-04-15 17:00:02.216963"], ["updated_at", "2018-04-15 17:00:02.216963"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "091"], ["name", "Cloyster"], ["img", "http://www.serebii.net/pokemongo/pokemon/091.png"], ["height", "1.50 m"], ["weight", "132.5 kg"], ["candy", "Shellder Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.5], ["spawn_time", "02:33"], ["created_at", "2018-04-15 17:00:02.222481"], ["updated_at", "2018-04-15 17:00:02.222481"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "092"], ["name", "Gastly"], ["img", "http://www.serebii.net/pokemongo/pokemon/092.png"], ["height", "1.30 m"], ["weight", "0.1 kg"], ["candy", "Gastly Candy"], ["candy_count", 25], ["egg", "5 km"], ["avg_spawns", 79.0], ["spawn_time", "04:21"], ["created_at", "2018-04-15 17:00:02.225736"], ["updated_at", "2018-04-15 17:00:02.225736"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "093"], ["name", "Haunter"], ["img", "http://www.serebii.net/pokemongo/pokemon/093.png"], ["height", "1.60 m"], ["weight", "0.1 kg"], ["candy", "Gastly Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 5.2], ["spawn_time", "00:10"], ["created_at", "2018-04-15 17:00:02.229901"], ["updated_at", "2018-04-15 17:00:02.229901"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "094"], ["name", "Gengar"], ["img", "http://www.serebii.net/pokemongo/pokemon/094.png"], ["height", "1.50 m"], ["weight", "40.5 kg"], ["candy", "Gastly Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.67], ["spawn_time", "03:55"], ["created_at", "2018-04-15 17:00:02.235476"], ["updated_at", "2018-04-15 17:00:02.235476"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "095"], ["name", "Onix"], ["img", "http://www.serebii.net/pokemongo/pokemon/095.png"], ["height", "8.79 m"], ["weight", "210.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 10.0], ["spawn_time", "01:18"], ["created_at", "2018-04-15 17:00:02.243666"], ["updated_at", "2018-04-15 17:00:02.243666"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "096"], ["name", "Drowzee"], ["img", "http://www.serebii.net/pokemongo/pokemon/096.png"], ["height", "0.99 m"], ["weight", "32.4 kg"], ["candy", "Drowzee Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 321.0], ["spawn_time", "01:51"], ["created_at", "2018-04-15 17:00:02.250752"], ["updated_at", "2018-04-15 17:00:02.250752"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "097"], ["name", "Hypno"], ["img", "http://www.serebii.net/pokemongo/pokemon/097.png"], ["height", "1.60 m"], ["weight", "75.6 kg"], ["candy", "Drowzee Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 10.0], ["spawn_time", "02:17"], ["created_at", "2018-04-15 17:00:02.256900"], ["updated_at", "2018-04-15 17:00:02.256900"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "098"], ["name", "Krabby"], ["img", "http://www.serebii.net/pokemongo/pokemon/098.png"], ["height", "0.41 m"], ["weight", "6.5 kg"], ["candy", "Krabby Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 212.0], ["spawn_time", "03:33"], ["created_at", "2018-04-15 17:00:02.260957"], ["updated_at", "2018-04-15 17:00:02.260957"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "099"], ["name", "Kingler"], ["img", "http://www.serebii.net/pokemongo/pokemon/099.png"], ["height", "1.30 m"], ["weight", "60.0 kg"], ["candy", "Krabby Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 6.2], ["spawn_time", "03:44"], ["created_at", "2018-04-15 17:00:02.263894"], ["updated_at", "2018-04-15 17:00:02.263894"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (2.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "100"], ["name", "Voltorb"], ["img", "http://www.serebii.net/pokemongo/pokemon/100.png"], ["height", "0.51 m"], ["weight", "10.4 kg"], ["candy", "Voltorb Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 65.0], ["spawn_time", "04:36"], ["created_at", "2018-04-15 17:00:02.271062"], ["updated_at", "2018-04-15 17:00:02.271062"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "101"], ["name", "Electrode"], ["img", "http://www.serebii.net/pokemongo/pokemon/101.png"], ["height", "1.19 m"], ["weight", "66.6 kg"], ["candy", "Voltorb Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 2.0], ["spawn_time", "04:10"], ["created_at", "2018-04-15 17:00:02.277855"], ["updated_at", "2018-04-15 17:00:02.277855"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "102"], ["name", "Exeggcute"], ["img", "http://www.serebii.net/pokemongo/pokemon/102.png"], ["height", "0.41 m"], ["weight", "2.5 kg"], ["candy", "Exeggcute Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 78.0], ["spawn_time", "09:09"], ["created_at", "2018-04-15 17:00:02.283638"], ["updated_at", "2018-04-15 17:00:02.283638"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "103"], ["name", "Exeggutor"], ["img", "http://www.serebii.net/pokemongo/pokemon/103.png"], ["height", "2.01 m"], ["weight", "120.0 kg"], ["candy", "Exeggcute Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.4], ["spawn_time", "12:34"], ["created_at", "2018-04-15 17:00:02.294128"], ["updated_at", "2018-04-15 17:00:02.294128"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "104"], ["name", "Cubone"], ["img", "http://www.serebii.net/pokemongo/pokemon/104.png"], ["height", "0.41 m"], ["weight", "6.5 kg"], ["candy", "Cubone Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 61.0], ["spawn_time", "01:51"], ["created_at", "2018-04-15 17:00:02.303303"], ["updated_at", "2018-04-15 17:00:02.303303"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "105"], ["name", "Marowak"], ["img", "http://www.serebii.net/pokemongo/pokemon/105.png"], ["height", "0.99 m"], ["weight", "45.0 kg"], ["candy", "Cubone Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 2.0], ["spawn_time", "03:59"], ["created_at", "2018-04-15 17:00:02.306564"], ["updated_at", "2018-04-15 17:00:02.306564"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "106"], ["name", "Hitmonlee"], ["img", "http://www.serebii.net/pokemongo/pokemon/106.png"], ["height", "1.50 m"], ["weight", "49.8 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 2.0], ["spawn_time", "03:59"], ["created_at", "2018-04-15 17:00:02.311625"], ["updated_at", "2018-04-15 17:00:02.311625"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "107"], ["name", "Hitmonchan"], ["img", "http://www.serebii.net/pokemongo/pokemon/107.png"], ["height", "1.40 m"], ["weight", "50.2 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 2.2], ["spawn_time", "05:58"], ["created_at", "2018-04-15 17:00:02.324616"], ["updated_at", "2018-04-15 17:00:02.324616"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "108"], ["name", "Lickitung"], ["img", "http://www.serebii.net/pokemongo/pokemon/108.png"], ["height", "1.19 m"], ["weight", "65.5 kg"], ["candy", "None"], ["egg", "5 km"], ["avg_spawns", 1.1], ["spawn_time", "02:46"], ["created_at", "2018-04-15 17:00:02.338920"], ["updated_at", "2018-04-15 17:00:02.338920"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "109"], ["name", "Koffing"], ["img", "http://www.serebii.net/pokemongo/pokemon/109.png"], ["height", "0.61 m"], ["weight", "1.0 kg"], ["candy", "Koffing Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 20.0], ["spawn_time", "08:16"], ["created_at", "2018-04-15 17:00:02.345636"], ["updated_at", "2018-04-15 17:00:02.345636"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "110"], ["name", "Weezing"], ["img", "http://www.serebii.net/pokemongo/pokemon/110.png"], ["height", "1.19 m"], ["weight", "9.5 kg"], ["candy", "Koffing Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.6], ["spawn_time", "12:17"], ["created_at", "2018-04-15 17:00:02.350560"], ["updated_at", "2018-04-15 17:00:02.350560"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "111"], ["name", "Rhyhorn"], ["img", "http://www.serebii.net/pokemongo/pokemon/111.png"], ["height", "0.99 m"], ["weight", "115.0 kg"], ["candy", "Rhyhorn Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 63.0], ["spawn_time", "03:21"], ["created_at", "2018-04-15 17:00:02.357472"], ["updated_at", "2018-04-15 17:00:02.357472"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "112"], ["name", "Rhydon"], ["img", "http://www.serebii.net/pokemongo/pokemon/112.png"], ["height", "1.91 m"], ["weight", "120.0 kg"], ["candy", "Rhyhorn Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 2.2], ["spawn_time", "05:50"], ["created_at", "2018-04-15 17:00:02.362535"], ["updated_at", "2018-04-15 17:00:02.362535"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "113"], ["name", "Chansey"], ["img", "http://www.serebii.net/pokemongo/pokemon/113.png"], ["height", "1.09 m"], ["weight", "34.6 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 1.3], ["spawn_time", "04:46"], ["created_at", "2018-04-15 17:00:02.365917"], ["updated_at", "2018-04-15 17:00:02.365917"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "114"], ["name", "Tangela"], ["img", "http://www.serebii.net/pokemongo/pokemon/114.png"], ["height", "0.99 m"], ["weight", "35.0 kg"], ["candy", "None"], ["egg", "5 km"], ["avg_spawns", 22.8], ["spawn_time", "23:13"], ["created_at", "2018-04-15 17:00:02.372800"], ["updated_at", "2018-04-15 17:00:02.372800"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "115"], ["name", "Kangaskhan"], ["img", "http://www.serebii.net/pokemongo/pokemon/115.png"], ["height", "2.21 m"], ["weight", "80.0 kg"], ["candy", "None"], ["egg", "5 km"], ["avg_spawns", 0.86], ["spawn_time", "02:40"], ["created_at", "2018-04-15 17:00:02.377837"], ["updated_at", "2018-04-15 17:00:02.377837"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (5.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "116"], ["name", "Horsea"], ["img", "http://www.serebii.net/pokemongo/pokemon/116.png"], ["height", "0.41 m"], ["weight", "8.0 kg"], ["candy", "Horsea Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 113.0], ["spawn_time", "02:53"], ["created_at", "2018-04-15 17:00:02.381689"], ["updated_at", "2018-04-15 17:00:02.381689"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "117"], ["name", "Seadra"], ["img", "http://www.serebii.net/pokemongo/pokemon/117.png"], ["height", "1.19 m"], ["weight", "25.0 kg"], ["candy", "Horsea Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 3.4], ["spawn_time", "03:18"], ["created_at", "2018-04-15 17:00:02.392118"], ["updated_at", "2018-04-15 17:00:02.392118"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "118"], ["name", "Goldeen"], ["img", "http://www.serebii.net/pokemongo/pokemon/118.png"], ["height", "0.61 m"], ["weight", "15.0 kg"], ["candy", "Goldeen Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 218.0], ["spawn_time", "03:14"], ["created_at", "2018-04-15 17:00:02.395575"], ["updated_at", "2018-04-15 17:00:02.395575"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "119"], ["name", "Seaking"], ["img", "http://www.serebii.net/pokemongo/pokemon/119.png"], ["height", "1.30 m"], ["weight", "39.0 kg"], ["candy", "Goldeen Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 8.0], ["spawn_time", "05:21"], ["created_at", "2018-04-15 17:00:02.400494"], ["updated_at", "2018-04-15 17:00:02.400494"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "120"], ["name", "Staryu"], ["img", "http://www.serebii.net/pokemongo/pokemon/120.png"], ["height", "0.79 m"], ["weight", "34.5 kg"], ["candy", "Staryu Candy"], ["candy_count", 50], ["egg", "5 km"], ["avg_spawns", 195.0], ["spawn_time", "22:59"], ["created_at", "2018-04-15 17:00:02.405062"], ["updated_at", "2018-04-15 17:00:02.405062"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "121"], ["name", "Starmie"], ["img", "http://www.serebii.net/pokemongo/pokemon/121.png"], ["height", "1.09 m"], ["weight", "80.0 kg"], ["candy", "Staryu Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 3.4], ["spawn_time", "06:57"], ["created_at", "2018-04-15 17:00:02.409299"], ["updated_at", "2018-04-15 17:00:02.409299"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "122"], ["name", "Mr. Mime"], ["img", "http://www.serebii.net/pokemongo/pokemon/122.png"], ["height", "1.30 m"], ["weight", "54.5 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 0.31], ["spawn_time", "01:51"], ["created_at", "2018-04-15 17:00:02.415207"], ["updated_at", "2018-04-15 17:00:02.415207"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "123"], ["name", "Scyther"], ["img", "http://www.serebii.net/pokemongo/pokemon/123.png"], ["height", "1.50 m"], ["weight", "56.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 14.0], ["spawn_time", "05:43"], ["created_at", "2018-04-15 17:00:02.423612"], ["updated_at", "2018-04-15 17:00:02.423612"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "124"], ["name", "Jynx"], ["img", "http://www.serebii.net/pokemongo/pokemon/124.png"], ["height", "1.40 m"], ["weight", "40.6 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 35.0], ["spawn_time", "05:41"], ["created_at", "2018-04-15 17:00:02.429321"], ["updated_at", "2018-04-15 17:00:02.429321"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "125"], ["name", "Electabuzz"], ["img", "http://www.serebii.net/pokemongo/pokemon/125.png"], ["height", "1.09 m"], ["weight", "30.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 7.4], ["spawn_time", "04:28"], ["created_at", "2018-04-15 17:00:02.438072"], ["updated_at", "2018-04-15 17:00:02.438072"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "126"], ["name", "Magmar"], ["img", "http://www.serebii.net/pokemongo/pokemon/126.png"], ["height", "1.30 m"], ["weight", "44.5 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 10.0], ["spawn_time", "20:36"], ["created_at", "2018-04-15 17:00:02.446801"], ["updated_at", "2018-04-15 17:00:02.446801"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.2ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "127"], ["name", "Pinsir"], ["img", "http://www.serebii.net/pokemongo/pokemon/127.png"], ["height", "1.50 m"], ["weight", "55.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 99.0], ["spawn_time", "03:25"], ["created_at", "2018-04-15 17:00:02.451263"], ["updated_at", "2018-04-15 17:00:02.451263"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "128"], ["name", "Tauros"], ["img", "http://www.serebii.net/pokemongo/pokemon/128.png"], ["height", "1.40 m"], ["weight", "88.4 kg"], ["candy", "None"], ["egg", "5 km"], ["avg_spawns", 12.0], ["spawn_time", "00:37"], ["created_at", "2018-04-15 17:00:02.456423"], ["updated_at", "2018-04-15 17:00:02.456423"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "129"], ["name", "Magikarp"], ["img", "http://www.serebii.net/pokemongo/pokemon/129.png"], ["height", "0.89 m"], ["weight", "10.0 kg"], ["candy", "Magikarp Candy"], ["candy_count", 400], ["egg", "2 km"], ["avg_spawns", 478.0], ["spawn_time", "14:26"], ["created_at", "2018-04-15 17:00:02.460795"], ["updated_at", "2018-04-15 17:00:02.460795"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (7.3ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "130"], ["name", "Gyarados"], ["img", "http://www.serebii.net/pokemongo/pokemon/130.png"], ["height", "6.50 m"], ["weight", "235.0 kg"], ["candy", "Magikarp Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.32], ["spawn_time", "02:15"], ["created_at", "2018-04-15 17:00:02.463558"], ["updated_at", "2018-04-15 17:00:02.463558"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "131"], ["name", "Lapras"], ["img", "http://www.serebii.net/pokemongo/pokemon/131.png"], ["height", "2.49 m"], ["weight", "220.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 0.6], ["spawn_time", "08:59"], ["created_at", "2018-04-15 17:00:02.476433"], ["updated_at", "2018-04-15 17:00:02.476433"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (3.1ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "132"], ["name", "Ditto"], ["img", "http://www.serebii.net/pokemongo/pokemon/132.png"], ["height", "0.30 m"], ["weight", "4.0 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 0.0], ["spawn_time", "N/A"], ["created_at", "2018-04-15 17:00:02.481325"], ["updated_at", "2018-04-15 17:00:02.481325"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "133"], ["name", "Eevee"], ["img", "http://www.serebii.net/pokemongo/pokemon/133.png"], ["height", "0.30 m"], ["weight", "6.5 kg"], ["candy", "Eevee Candy"], ["candy_count", 25], ["egg", "10 km"], ["avg_spawns", 275.0], ["spawn_time", "05:32"], ["created_at", "2018-04-15 17:00:02.492724"], ["updated_at", "2018-04-15 17:00:02.492724"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (7.4ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "134"], ["name", "Vaporeon"], ["img", "http://www.serebii.net/pokemongo/pokemon/134.png"], ["height", "0.99 m"], ["weight", "29.0 kg"], ["candy", "Eevee Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.4], ["spawn_time", "10:54"], ["created_at", "2018-04-15 17:00:02.496130"], ["updated_at", "2018-04-15 17:00:02.496130"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "135"], ["name", "Jolteon"], ["img", "http://www.serebii.net/pokemongo/pokemon/135.png"], ["height", "0.79 m"], ["weight", "24.5 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 1.2], ["spawn_time", "02:30"], ["created_at", "2018-04-15 17:00:02.508514"], ["updated_at", "2018-04-15 17:00:02.508514"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "136"], ["name", "Flareon"], ["img", "http://www.serebii.net/pokemongo/pokemon/136.png"], ["height", "0.89 m"], ["weight", "25.0 kg"], ["candy", "Eevee Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 1.7], ["spawn_time", "07:02"], ["created_at", "2018-04-15 17:00:02.512617"], ["updated_at", "2018-04-15 17:00:02.512617"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "137"], ["name", "Porygon"], ["img", "http://www.serebii.net/pokemongo/pokemon/137.png"], ["height", "0.79 m"], ["weight", "36.5 kg"], ["candy", "None"], ["egg", "5 km"], ["avg_spawns", 1.2], ["spawn_time", "02:49"], ["created_at", "2018-04-15 17:00:02.520953"], ["updated_at", "2018-04-15 17:00:02.520953"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "138"], ["name", "Omanyte"], ["img", "http://www.serebii.net/pokemongo/pokemon/138.png"], ["height", "0.41 m"], ["weight", "7.5 kg"], ["candy", "Omanyte Candy"], ["candy_count", 50], ["egg", "10 km"], ["avg_spawns", 14.0], ["spawn_time", "10:23"], ["created_at", "2018-04-15 17:00:02.527446"], ["updated_at", "2018-04-15 17:00:02.527446"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (4.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "139"], ["name", "Omastar"], ["img", "http://www.serebii.net/pokemongo/pokemon/139.png"], ["height", "0.99 m"], ["weight", "35.0 kg"], ["candy", "None"], ["egg", "Omanyte Candy"], ["avg_spawns", 0.61], ["spawn_time", "05:04"], ["created_at", "2018-04-15 17:00:02.531661"], ["updated_at", "2018-04-15 17:00:02.531661"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "140"], ["name", "Kabuto"], ["img", "http://www.serebii.net/pokemongo/pokemon/140.png"], ["height", "0.51 m"], ["weight", "11.5 kg"], ["candy", "Kabuto Candy"], ["candy_count", 50], ["egg", "10 km"], ["avg_spawns", 10.0], ["spawn_time", "00:05"], ["created_at", "2018-04-15 17:00:02.542786"], ["updated_at", "2018-04-15 17:00:02.542786"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.8ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "141"], ["name", "Kabutops"], ["img", "http://www.serebii.net/pokemongo/pokemon/141.png"], ["height", "1.30 m"], ["weight", "40.5 kg"], ["candy", "Kabuto Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.32], ["spawn_time", "23:40"], ["created_at", "2018-04-15 17:00:02.546498"], ["updated_at", "2018-04-15 17:00:02.546498"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "142"], ["name", "Aerodactyl"], ["img", "http://www.serebii.net/pokemongo/pokemon/142.png"], ["height", "1.80 m"], ["weight", "59.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 1.8], ["spawn_time", "23:40"], ["created_at", "2018-04-15 17:00:02.557309"], ["updated_at", "2018-04-15 17:00:02.557309"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "143"], ["name", "Snorlax"], ["img", "http://www.serebii.net/pokemongo/pokemon/143.png"], ["height", "2.11 m"], ["weight", "460.0 kg"], ["candy", "None"], ["egg", "10 km"], ["avg_spawns", 1.6], ["spawn_time", "23:40"], ["created_at", "2018-04-15 17:00:02.560387"], ["updated_at", "2018-04-15 17:00:02.560387"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.9ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "144"], ["name", "Articuno"], ["img", "http://www.serebii.net/pokemongo/pokemon/144.png"], ["height", "1.70 m"], ["weight", "55.4 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 0.0], ["spawn_time", "N/A"], ["created_at", "2018-04-15 17:00:02.566273"], ["updated_at", "2018-04-15 17:00:02.566273"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.5ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "145"], ["name", "Zapdos"], ["img", "http://www.serebii.net/pokemongo/pokemon/145.png"], ["height", "1.60 m"], ["weight", "52.6 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 0.0], ["spawn_time", "N/A"], ["created_at", "2018-04-15 17:00:02.575563"], ["updated_at", "2018-04-15 17:00:02.575563"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "146"], ["name", "Moltres"], ["img", "http://www.serebii.net/pokemongo/pokemon/146.png"], ["height", "2.01 m"], ["weight", "60.0 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 0.0], ["spawn_time", "N/A"], ["created_at", "2018-04-15 17:00:02.578632"], ["updated_at", "2018-04-15 17:00:02.578632"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "147"], ["name", "Dratini"], ["img", "http://www.serebii.net/pokemongo/pokemon/147.png"], ["height", "1.80 m"], ["weight", "3.3 kg"], ["candy", "Dratini Candy"], ["candy_count", 25], ["egg", "10 km"], ["avg_spawns", 30.0], ["spawn_time", "06:41"], ["created_at", "2018-04-15 17:00:02.582456"], ["updated_at", "2018-04-15 17:00:02.582456"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (1.0ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "148"], ["name", "Dragonair"], ["img", "http://www.serebii.net/pokemongo/pokemon/148.png"], ["height", "3.99 m"], ["weight", "16.5 kg"], ["candy", "Dratini Candy"], ["candy_count", 100], ["egg", "Not in Eggs"], ["avg_spawns", 2.0], ["spawn_time", "11:57"], ["created_at", "2018-04-15 17:00:02.592583"], ["updated_at", "2018-04-15 17:00:02.592583"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "149"], ["name", "Dragonite"], ["img", "http://www.serebii.net/pokemongo/pokemon/149.png"], ["height", "2.21 m"], ["weight", "210.0 kg"], ["candy", "Dratini Candy"], ["egg", "Not in Eggs"], ["avg_spawns", 0.11], ["spawn_time", "23:38"], ["created_at", "2018-04-15 17:00:02.597417"], ["updated_at", "2018-04-15 17:00:02.597417"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "150"], ["name", "Mewtwo"], ["img", "http://www.serebii.net/pokemongo/pokemon/150.png"], ["height", "2.01 m"], ["weight", "122.0 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 0.0], ["spawn_time", "N/A"], ["created_at", "2018-04-15 17:00:02.605150"], ["updated_at", "2018-04-15 17:00:02.605150"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mPokemon Create (0.7ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["num", "151"], ["name", "Mew"], ["img", "http://www.serebii.net/pokemongo/pokemon/151.png"], ["height", "0.41 m"], ["weight", "4.0 kg"], ["candy", "None"], ["egg", "Not in Eggs"], ["avg_spawns", 0.0], ["spawn_time", "N/A"], ["created_at", "2018-04-15 17:00:02.611309"], ["updated_at", "2018-04-15 17:00:02.611309"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:10:02 +0800
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:3
+  Rendered pokemons/index.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 499ms (Views: 462.0ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/pokemons.1" for 127.0.0.1 at 2018-04-16 01:10:08 +0800
+Processing by PokemonsController#index as 
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:3
+  Rendered pokemons/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 123ms (Views: 83.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pokemons.1" for 127.0.0.1 at 2018-04-16 01:13:21 +0800
+Processing by PokemonsController#index as 
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:3
+  Rendered pokemons/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 128ms (Views: 90.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:14:47 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 74ms (Views: 28.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pokemons.1" for 127.0.0.1 at 2018-04-16 01:15:43 +0800
+Processing by PokemonsController#index as 
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:3
+  Rendered pokemons/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 138ms (Views: 77.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pokemons.1" for 127.0.0.1 at 2018-04-16 01:15:44 +0800
+Processing by PokemonsController#index as 
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:3
+  Rendered pokemons/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 88ms (Views: 56.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pokemons/2" for 127.0.0.1 at 2018-04-16 01:15:46 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 45ms (Views: 32.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pokemons/3" for 127.0.0.1 at 2018-04-16 01:15:50 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPokemon Load (1.1ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 36.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pokemons.1" for 127.0.0.1 at 2018-04-16 01:21:20 +0800
+Started GET "/pokemons/2" for 127.0.0.1 at 2018-04-16 01:21:20 +0800
+Started GET "/pokemons/3" for 127.0.0.1 at 2018-04-16 01:21:20 +0800
+Processing by PokemonsController#show as HTML
+Processing by PokemonsController#index as 
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"3"}
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  [1m[36mPokemon Load (1.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendered pokemons/index.html.erb within layouts/application (47.3ms)
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.3ms)
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 190ms (Views: 143.8ms | ActiveRecord: 6.0ms)
+
+
+Completed 200 OK in 202ms (Views: 72.2ms | ActiveRecord: 41.4ms)
+
+
+Completed 200 OK in 208ms (Views: 81.7ms | ActiveRecord: 46.4ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2018-04-16 01:21:22 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/new" for 127.0.0.1 at 2018-04-16 01:21:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pokemons.1" for 127.0.0.1 at 2018-04-16 01:21:52 +0800
+Processing by PokemonsController#index as 
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (0.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendered pokemons/index.html.erb within layouts/application (353.3ms)
+Completed 500 Internal Server Error in 440ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new' for #<#<Class:0x00007fda6de40fa8>:0x00007fda6f54d778>):
+    1: <h1>Pokedex</h1>
+    2: <%= link_to 'Report a New Pokemon Sighting', pokemons_path(new) %>
+    3: <ul>
+    4:     <% @pokemons.each do |p| %>
+    5:         <li><%= link_to p.name, pokemon_path(p) %></li>
+  
+app/views/pokemons/index.html.erb:2:in `_app_views_pokemons_index_html_erb___3412769358409699982_70288073715780'
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:22:55 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Pokemon Load (0.1ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendered pokemons/index.html.erb within layouts/application (300.1ms)
+Completed 500 Internal Server Error in 309ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_path' for #<#<Class:0x00007fda6de40fa8>:0x00007fda7311eea0>
+Did you mean?  view_paths):
+    1: <h1>Pokedex</h1>
+    2: <%= link_to 'Report a New Pokemon Sighting', new_path %>
+    3: <ul>
+    4:     <% @pokemons.each do |p| %>
+    5:         <li><%= link_to p.name, pokemon_path(p) %></li>
+  
+app/views/pokemons/index.html.erb:2:in `_app_views_pokemons_index_html_erb___3412769358409699982_70288105077720'
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:24:06 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 84ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:24:42 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 65ms (Views: 58.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:24:44 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 50ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:24:47 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 87ms (Views: 80.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:24:48 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 53.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:24:50 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 57ms (Views: 43.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 01:24:53 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 50ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:24:56 +0800
+Processing by PokemonsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r7sBb7DX+k+RDvfBRsCohX29Y+6yQGZUeLwj0nN54XjOEno09zS7hVF5C6pXa69oKaKPislQKtZ1C+TmWm+oTA==", "id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:25:01 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:28:01 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 23.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 01:28:02 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.1ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 42ms (Views: 35.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:28:08 +0800
+Processing by PokemonsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MYe8b4l3+H4ovi6dunuqOnSslcB14JY/ESTgvqJ4ZThQLsc0zpS5tOjJ0var0K3XILN5pA7w2r0ckyeKi24sDA==", "id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 01:28:10 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 54ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:28:26 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 47ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:28:30 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O6sNEvs53RxnvcjwXBkZfN7uYego7PH6CnXSnO1iAIbWkZFdMRGw7axiCelhZ9/IPn5AFqsHUlEqIOO6b/VOhQ==", "pokemon"=>{"num"=>"def", "name"=>"", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:28:41 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:30:23 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 60ms (Views: 34.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:30:26 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hFU6n3xhBIZbgIlXE2zwFRUnWN2DTaTtFEQVVXv1uyFpb6bQtklpd5BfSE4uEjah9bd5IwCmB0Y0ESRz+WL1Ig==", "pokemon"=>{"num"=>"1", "name"=>"", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+Unpermitted parameters: :height, :weight, :candy, :candy_count, :egg, :avg_spawns, :spawn_time
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:30:34 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 55ms (Views: 49.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:30:35 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 50ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:31:41 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ukglzSC3rZmS+3t3ao83a2lWufKLl9u0MbiJ8fNSQvJXcrmC6p/AaFkkum5X8fHficaYDAh8eB8R7bjXccUM8Q==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"10m", "weight"=>"900kg", "candy"=>"Wut", "candy_count"=>"None", "egg"=>"Rawr", "avg_spawns"=>"1.03", "spawn_time"=>"6:30"}, "commit"=>"Save Pokemon"}
+Unpermitted parameters: :height, :weight, :candy, :candy_count, :egg, :avg_spawns, :spawn_time
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:31:52 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:31:57 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 49ms (Views: 45.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2018-04-16 01:32:39 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 68ms (Views: 53.1ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:32:55 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ukglzSC3rZmS+3t3ao83a2lWufKLl9u0MbiJ8fNSQvJXcrmC6p/AaFkkum5X8fHficaYDAh8eB8R7bjXccUM8Q==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"10m", "weight"=>"900kg", "candy"=>"Huh", "candy_count"=>"Meh", "egg"=>"Wut", "avg_spawns"=>"12.3", "spawn_time"=>"23.4"}, "commit"=>"Save Pokemon"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/pokemons_controller.rb:15:in `create'
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:34:10 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ukglzSC3rZmS+3t3ao83a2lWufKLl9u0MbiJ8fNSQvJXcrmC6p/AaFkkum5X8fHficaYDAh8eB8R7bjXccUM8Q==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"10m", "weight"=>"900kg", "candy"=>"Huh", "candy_count"=>"Meh", "egg"=>"Wut", "avg_spawns"=>"12.3", "spawn_time"=>"23.4"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 70ms (Views: 35.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:34:25 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 68ms (Views: 63.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:34:33 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"okLxoTexT8bZTzf2CLK+d7luP23h+iyURvDuFt66bEDD64r6cFIODBk4y50ZGbma7XHTCZrqYBZLRyki96wldA==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"10m", "weight"=>"900kg", "candy"=>"Huh", "candy_count"=>"Meh", "egg"=>"Wut", "avg_spawns"=>"12.3", "spawn_time"=>"23.4"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:34:50 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:35:23 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OHgdyNomT7HDQJLzZ08VT2UvdvofJhaCKVrUjbKpsZ9Z0WaTncUOewM3bph25BKiMTCanmQ2WgAk7RO5m7/4qw==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"10m", "weight"=>"900kg", "candy"=>"Huh", "candy_count"=>"Meh", "egg"=>"Wut", "avg_spawns"=>"12.3", "spawn_time"=>"23.4"}, "commit"=>"Save Pokemon"}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 8.9ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/pokemons_controller.rb:15:in `create'
+Started GET "/pokemons" for 127.0.0.1 at 2018-04-16 01:36:26 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 89ms (Views: 76.9ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/pokemons" for 127.0.0.1 at 2018-04-16 01:36:32 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 68ms (Views: 63.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 01:36:34 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 42ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:36:40 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9rZY/pVgfR43ciVbxwi2zDHeyvQQJUDTtRxwPRey9lgbjMSxX0gQ7/yt5EL6dnB40U7rCpPO43iVSUEblSW4Ww==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/pokemons_controller.rb:15:in `create'
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:36:58 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9rZY/pVgfR43ciVbxwi2zDHeyvQQJUDTtRxwPRey9lgbjMSxX0gQ7/yt5EL6dnB40U7rCpPO43iVSUEblSW4Ww==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 68ms (Views: 40.4ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:37:18 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rP9XIqIm+rzQwD6PxRsMu8xmhv9MLsjpldcCX8T0gJTNVix55cW7dhC3wuTUsAtWmHlqmzc+hGuYYMVr7eLJoA==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 62ms (Views: 36.3ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:37:43 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aCLsz7Md0o0DDf3nSsKnAdfPRIYxrs6zCqU/oqitPncJi5eU9P6TR8N6AYxbaaDsg9Co4kq+gjEHEviWgbt3Qw==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 90ms (Views: 47.2ms | ActiveRecord: 17.9ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:40:37 +0800
+  
+SyntaxError (/Users/kokcheekean/Desktop/pokedex-rails-master/app/controllers/pokemons_controller.rb:29: syntax error, unexpected '(', expecting keyword_then or ';' or '\n'
+        if @pokemon_update(pokemon_params)
+                          ^
+/Users/kokcheekean/Desktop/pokedex-rails-master/app/controllers/pokemons_controller.rb:47: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/pokemons_controller.rb:29: syntax error, unexpected '(', expecting keyword_then or ';' or '\n'
+app/controllers/pokemons_controller.rb:47: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:41:48 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IMNzMrcBIRTDSy/dkIjrsauQQNIfs7G/fvryogeY2ItBaghp8OJg3gM807aBI+xc/4+stmSj/T1zTTWWLo6Rvw==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"", "height"=>"", "weight"=>"", "candy"=>"", "candy_count"=>"", "egg"=>"", "avg_spawns"=>"", "spawn_time"=>""}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 45ms (Views: 22.9ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:42:09 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZ9Wnfvj/zRrXCq6HcbfVysgO8zoyKx3UCaTLpHDiQH8Ni3GvAC+/qsr1tEMbdi6fz/XqJPY4PVdkVQauNXANQ==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"aside", "weight"=>"asdfa", "candy"=>"asdfs", "candy_count"=>"sofa", "egg"=>"asdf", "avg_spawns"=>"1.23", "spawn_time"=>"asdf"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:42:51 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZ9Wnfvj/zRrXCq6HcbfVysgO8zoyKx3UCaTLpHDiQH8Ni3GvAC+/qsr1tEMbdi6fz/XqJPY4PVdkVQauNXANQ==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"aside", "weight"=>"asdfa", "candy"=>"asdfs", "candy_count"=>"sofa", "egg"=>"asdf", "avg_spawns"=>"1.23", "spawn_time"=>"asdf"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (124.8ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `number' for #<ActionView::Helpers::FormBuilder:0x00007fda749ff8c0>):
+    34:     </p>
+    35:     <p>
+    36:         <%= f.label :avg_spawns %>
+    37:         <%= f.number :avg_spawns %>
+    38:     </p>
+    39:     <p>
+    40:         <%= f.label :spawn_time %>
+  
+app/views/pokemons/new.html.erb:37:in `block in _app_views_pokemons_new_html_erb__4097096698101047875_70288103707700'
+app/views/pokemons/new.html.erb:2:in `_app_views_pokemons_new_html_erb__4097096698101047875_70288103707700'
+app/controllers/pokemons_controller.rb:20:in `create'
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:43:02 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZ9Wnfvj/zRrXCq6HcbfVysgO8zoyKx3UCaTLpHDiQH8Ni3GvAC+/qsr1tEMbdi6fz/XqJPY4PVdkVQauNXANQ==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"aside", "weight"=>"asdfa", "candy"=>"asdfs", "candy_count"=>"sofa", "egg"=>"asdf", "avg_spawns"=>"1.23", "spawn_time"=>"asdf"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:45:22 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nZ9Wnfvj/zRrXCq6HcbfVysgO8zoyKx3UCaTLpHDiQH8Ni3GvAC+/qsr1tEMbdi6fz/XqJPY4PVdkVQauNXANQ==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"aside", "weight"=>"asdfa", "candy"=>"asdfs", "candy_count"=>"sofa", "egg"=>"asdf", "avg_spawns"=>"1.23", "spawn_time"=>"asdf"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:45:25 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s5eSsnCyg6qczPV4n+++pz+nQOeSMMAF5Hia+KnUTKfSPunpN1HCYFy7CROORLlKa7isg+kgjIfpz13MgMIFkw==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"aside", "weight"=>"asdfa", "candy"=>"asdfs", "candy_count"=>"sofa", "egg"=>"asdf", "avg_spawns"=>"1.23", "spawn_time"=>"asdf"}, "commit"=>"Save Pokemon"}
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pokemons" for 127.0.0.1 at 2018-04-16 01:47:20 +0800
+Processing by PokemonsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"orPWCxAERLGRQktlYQp9m3NU1CsD68+pATTQiIqBSYnDGq1QV+cFe1E1tw5woXp2J0s4T3j7gysMgxe8o5cAvQ==", "pokemon"=>{"num"=>"999", "name"=>"Messasaur", "img"=>"https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg", "height"=>"aside", "weight"=>"asdfa", "candy"=>"asdfs", "candy_count"=>"sofa", "egg"=>"asdf", "avg_spawns"=>"1.23", "spawn_time"=>"asdf"}, "commit"=>"Save Pokemon"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:17
+  [1m[36mPokemon Create (2.6ms)[0m  [1m[32mINSERT INTO "pokemons" ("num", "name", "img", "height", "weight", "candy", "candy_count", "egg", "avg_spawns", "spawn_time", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["num", "999"], ["name", "Messasaur"], ["img", "https://www.sciencedaily.com/images/2010/03/100325143045_1_540x360.jpg"], ["height", "aside"], ["weight", "asdfa"], ["candy", "asdfs"], ["candy_count", 0], ["egg", "asdf"], ["avg_spawns", 1.23], ["spawn_time", "asdf"], ["created_at", "2018-04-15 17:47:20.667046"], ["updated_at", "2018-04-15 17:47:20.667046"]]
+  ↳ app/controllers/pokemons_controller.rb:17
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:17
+Redirected to http://localhost:3000/pokemons/152
+Completed 302 Found in 35ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/pokemons/152" for 127.0.0.1 at 2018-04-16 01:47:20 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"152"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 44.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pokemons/152" for 127.0.0.1 at 2018-04-16 01:47:28 +0800
+Processing by PokemonsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8lT+46MBO7Sg7sv+lafkEuwOOvvgP/wRxxkW1KBoareT/YW45OJ6fmCZN5WEDOP/uBHWn5svsJPKrtHgiX4jgw==", "id"=>"152"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pokemons_controller.rb:40
+  [1m[36mPokemon Destroy (2.3ms)[0m  [1m[31mDELETE FROM "pokemons" WHERE "pokemons"."id" = $1[0m  [["id", 152]]
+  ↳ app/controllers/pokemons_controller.rb:40
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pokemons_controller.rb:40
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:47:28 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 90ms (Views: 81.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/pokemons/40" for 127.0.0.1 at 2018-04-16 01:48:26 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 39ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:50:22 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 68ms (Views: 64.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:50:50 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 60ms (Views: 45.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:51:06 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:51:08 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:51:11 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 62ms (Views: 57.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:51:36 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 42ms (Views: 30.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 01:52:29 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 55ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 01:52:54 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 67ms (Views: 59.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:54:12 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:54:38 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:54:45 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 01:54:51 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 01:54:54 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 77ms (Views: 67.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:55:03 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.1ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 01:55:43 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 65ms (Views: 60.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pokemons/4" for 127.0.0.1 at 2018-04-16 01:56:07 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 70ms (Views: 50.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:06:12 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  Rendered pokemons/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/kokcheekean/Desktop/pokedex-rails-master/app/views/pokemons/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/pokemons/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:06:34 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 69ms (Views: 62.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:06:39 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 39.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/pokemons/2" for 127.0.0.1 at 2018-04-16 02:06:42 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:08:51 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.9ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 02:08:52 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 29.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1/edit" for 127.0.0.1 at 2018-04-16 02:10:46 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:10:49 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.9ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:10:51 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 02:10:52 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 02:10:55 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 02:11:03 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:16:22 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:16:35 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 32ms (Views: 20.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pokemons/2" for 127.0.0.1 at 2018-04-16 02:16:38 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:17:53 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 68ms (Views: 62.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:18:12 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 62ms (Views: 57.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:19:06 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 59ms (Views: 55.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:19:35 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 71ms (Views: 65.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:19:52 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 59ms (Views: 54.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:20:24 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.2ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 58ms (Views: 53.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:20:46 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.9ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 66ms (Views: 61.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:21:34 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 66ms (Views: 60.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:21:40 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 65ms (Views: 60.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:24:59 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:25:05 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.3ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 68ms (Views: 63.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:25:11 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 70ms (Views: 65.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:25:19 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 66ms (Views: 61.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:27:04 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.7ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:27:06 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 67ms (Views: 62.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:29:53 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 40ms (Views: 32.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:30:57 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:31:28 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:31:47 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:32:35 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/1" for 127.0.0.1 at 2018-04-16 02:32:53 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:33:07 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (2.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 72ms (Views: 66.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/pokemons/14" for 127.0.0.1 at 2018-04-16 02:33:15 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mPokemon Load (1.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 64ms (Views: 54.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pokemons/18" for 127.0.0.1 at 2018-04-16 02:33:19 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (1.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 26.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:33:26 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.8ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 65ms (Views: 51.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:33:43 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (3.9ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 78ms (Views: 58.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:36:15 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 42ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:40:31 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:40:41 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.7ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:42:23 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:42:41 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:43:59 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:45:28 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.3ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:45:33 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/18/edit" for 127.0.0.1 at 2018-04-16 02:46:25 +0800
+Processing by PokemonsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:25
+  Rendering pokemons/edit.html.erb within layouts/application
+  Rendered pokemons/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pokemons/18" for 127.0.0.1 at 2018-04-16 02:46:32 +0800
+Processing by PokemonsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPokemon Load (0.6ms)[0m  [1m[34mSELECT  "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/pokemons_controller.rb:7
+  Rendering pokemons/show.html.erb within layouts/application
+  Rendered pokemons/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 46ms (Views: 38.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:46:34 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:4
+  Rendered pokemons/index.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 81ms (Views: 72.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pokemons/new" for 127.0.0.1 at 2018-04-16 02:46:36 +0800
+Processing by PokemonsController#new as HTML
+  Rendering pokemons/new.html.erb within layouts/application
+  Rendered pokemons/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 56ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 02:49:38 +0800
+Processing by PokemonsController#index as HTML
+  Rendering pokemons/index.html.erb within layouts/application
+  [1m[36mPokemon Load (1.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/pokemons/index.html.erb:6
+  Rendered pokemons/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 1.4ms)
+
+
